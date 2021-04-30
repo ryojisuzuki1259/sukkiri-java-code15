@@ -3,10 +3,10 @@ package code15;
 public class Main {
 
 	public static void main(String[] args) {
-		final String FORMAT = "%-9s %-13s 所持金%,6d";
-		String s = String.format(FORMAT, hero.getName(), hero.getJob(), hero.Gold());
-		System.out.println(s);
-
+		long start = System.currentTimeMillis();
+		// 時間がかかる処理を記述
+		long end = System.currentTimeMillis();
+		System.out.println("処理にかかった時間は" + (end - start) + "ミリ秒でした");
 	}
 
 }
