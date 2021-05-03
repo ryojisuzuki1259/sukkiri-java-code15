@@ -17,6 +17,8 @@ public class Main {
 		ZonedDateTime z2 = ZonedDateTime.of(2020, 1, 2, 3, 4, 5, 6, ZoneId.of("Asia/Tokyo"));
 
 		// InstantとZonedDateTimeの相互変換
+		Instant i3 = z2.toInstant();
+		ZonedDateTime z3 = i3.atZone(ZoneId.of("Europe/London"));
 
 
 	}
