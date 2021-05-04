@@ -20,7 +20,11 @@ public class Main {
 		Instant i3 = z2.toInstant();
 		ZonedDateTime z3 = i3.atZone(ZoneId.of("Europe/London"));
 
-
+		// ZonedDateTimeの利用方法
+		System.out.println("東京:" + z2.getYear() + z2.getMonth() + z2.getDayOfMonth());
+		System.out.println("ロンドン:" + z3.getYear() + z3.getMonth() + z3.getDayOfMonth());
+		if (z2.isEqual(z3)) {
+			System.out.println("これらは同じ瞬間を指しています");
+		}
 	}
-
 }
