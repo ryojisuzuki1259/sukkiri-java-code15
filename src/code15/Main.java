@@ -1,23 +1,20 @@
 package code15;
 import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
+import java.time.Period;
 
 public class Main {
 
 	public static void main(String[] args) {
-		// 文字列からLocalDateを生成
-		DateTimeFormatter fmt = DateTimeFormatter.ofPattern("yyyy/MM/dd");
-		LocalDate ldate = LocalDate.parse("2020/09/22", fmt);
+		LocalDate d1 = LocalDate.of(2020, 1, 1);
+		LocalDate d2 = LocalDate.of(2020, 1, 4);
 
-		// 1000日後を計算する
-		LocalDate ldatep = ldate.plusDays(1000);
-		String str = ldatep.format(fmt);
-		System.out.println("1000日後は" + str);
+		// 3日後を表すPeriodを2通りの方法で生成
+		Period p1 = Period.ofDays(3);
+		Period p2 = Period.between(d1, d2);
 
-		// 現在日付との比較
-		LocalDate now = LocalDate.now();
-		if (now.isAfter(ldatep)) {
-			System.out.println("1000日後は過去日付です");
-		}
+		// d2のさらに3日後を計算する
+		LocalDate d3 = d2.plus(p2);
+
+
 	}
 }
